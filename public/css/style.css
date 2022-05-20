@@ -1,0 +1,669 @@
+
+/* import police ohmyfood*/
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/* import police paris belleville */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900");
+    
+/*--------------------------------------------------------------Général--------------------------------------------------------------------*/
+    
+/*box sizing appliquer à tout le code*/
+* {
+box-sizing: border-box;
+}
+body {
+width: 100%;
+margin: 0;
+font-family: "Roboto", sans-serif;
+font-size: 16px;
+color: #000000;
+background-color: #f6f6f6;
+margin:0;
+}
+/*les liens ne sont pas bleu soulignés */
+a:link {
+text-decoration: none;
+color: black;
+} 
+a:visited {
+color: black;
+}
+main {
+margin-left: 0;
+margin-right: 0;
+} 
+html,
+body {
+overflow-x: hidden;
+    
+}
+button {
+background-image: linear-gradient(#FF79DA, #9356DC);
+height: 3rem;
+color: white;
+padding: 1rem 1.5rem;
+border-radius: 1.5rem;
+border-style: none;
+font-weight: bold;
+font-size: 15px;
+box-shadow: 1px 4px 16px -3px #bbbbbb;
+margin: auto;
+transition: all 400ms;
+}
+button:hover {
+transform: scale(1.02);
+box-shadow: 1px 4px 16px -3px #a1a1a1;
+opacity: 0.7;
+}
+/*-------------------------------------------------------------- loader-----------------------------------------------------------*/
+.loader {
+background-color: #f6f6f6;
+position: fixed;
+z-index: 10;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+animation: fade-in 3s cubic-bezier(1, 0.08, 0.96, 0.2) forwards;
+}
+    
+.loader_circle{
+width: 120px;
+height: 120px;
+padding: 10px;
+border-radius: 50%;
+border: 12px solid;
+border-color: #9356DC #b5e299 #FF79DA #9356DC;
+animation: ring 1s linear infinite;
+}
+/*-------------------------------------------------------animation loader------------------------------------------------------------------*/
+@keyframes fade-in {
+0% {
+  opacity: 0.9;
+  }
+  100% {
+  opacity: 0;
+  z-index: -1;
+  }
+    }
+@keyframes ring {
+  0% {
+  transform: rotate(0deg);
+  }
+  100% {
+  transform: rotate(360deg);
+    z-index: -1;
+  }
+    }
+    /*-----------------------------------------------------------------------header (logo)-----------------------------------------------------*/
+.header-title {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+position: relative;
+height: 35px;
+margin-top: 1rem;
+box-shadow: 0 0 0.5rem beige;
+  }
+/*---------------------------------------------------------------------localisation--------------------------------------------------------*/
+.ville{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+background-color: #eaeaea;
+padding: 0.1rem;
+}
+.ville .localisation {
+font-size: 1rem;
+font-weight: 500;
+color: #3b3a3a;
+}
+/*-------------------------------------------------------------------section explorer------------------------------------------------------- */
+.explorer {
+text-align: center;
+background-color: #f2f2f2;
+padding-top: 2em;
+padding-bottom: 1.5em;
+}
+.explorer h1 {
+font-size: 1.5rem;
+margin-top: -1.2rem;
+}
+.explorer .explorer__p {
+font-size: 1.2rem;
+font-weight: 300;
+color: #656565;
+}
+/*------------------------------------------------------- section fonctionnement--------------------------------------------------------*/
+.filters{
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+row-gap: 10px;
+margin-top: 30px;
+margin-bottom: 45px;
+align-items: center;
+font-weight: bolder;
+/*même largeur que les filters__title*/
+}
+.filters h2 {
+font-size: 25px;
+width: 85%;
+}
+.filters p {
+width: 85%;
+}
+.conteneur_titre_filter {
+display: flex;
+box-shadow: 0 0 10px grey;
+/*bordure shadow gris plus foncé*/
+height: 55px;
+border-radius: 15px;
+width: 85%;
+align-items: center;
+/*aligné sur axe horizontal*/
+padding-left: 0px;
+padding-right: 20px;
+margin-bottom: 10px;
+/*utile au moment du wrapping pour ne pas se coller sur phone */
+font-size: 13px;
+font-weight: bold;
+background-color: #f2f2f2;
+transition: all 600ms;
+  } 
+.filter_titre_numéro {
+display: flex;
+position: relative;
+right: 15px;
+width: 25px;
+height: 25px;
+border-radius: 100%;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 14px;
+background-color: #9356dc;
+}
+.conteneur_titre_filter i {
+display: flex;
+color: #44464a;
+font-size: 20px;
+object-fit: fill;
+/*au lieu de choisir font-size*/
+left: -10px;
+height: 70px;
+width: 70px;
+align-items: center;
+justify-content: center;
+margin-right: 10px;
+/*texte pas collé au cercle à gauche du texte*/
+}
+.conteneur_titre_filter:hover {
+background-color: #f5edff;
+}
+.conteneur_titre_filter:hover i {
+color: #9356dc;
+}
+/*-----------------------------------------------------------restaurant--------------------------------------------------------------------*/
+    
+.restaurant {
+display: flex;
+flex-wrap: wrap;
+height: auto;
+width: 100%;
+justify-content: space-evenly;
+row-gap: 20px;
+/*entre les 2 lignes */
+background-color: #f2f2f2;
+font-size: 16px;
+padding-bottom: 70px;
+}
+.restaurant h2 {
+display: flex;
+width: 100%;
+padding-top: 30px;
+padding-left: 20px;
+margin-top: 0px;
+margin-bottom: 0px;
+font-size: 25px;
+width: 85%
+}
+.restaurant_card {
+display: flex;
+position: relative;
+height: 100%;
+/*la carte occupe toute la largeur du conteneur a=href */
+min-height: 100px;
+width: 37%;
+box-shadow: 0 0 10px gray;
+flex-direction: column;
+justify-content: space-between;
+/*bordure shadow gris plus foncé*/
+background-color: white;
+border-radius: 15px;
+font-size: 12px;
+}
+.restaurant_card  img {
+object-fit: cover;
+display: flex;
+width: 100%;
+height: 180px;
+object-fit: cover;
+border-radius: 10px 10px 10px 10px;
+} 
+.restaurant_card_new {
+position: absolute;
+right: 12px;
+top: 10px;
+padding: 7px 12px;
+margin: 0;
+color: #278870; 
+font-size: 14px;
+font-weight: bold;
+background-color: #99e2d0;
+border-radius: 2px;
+}
+.restaurant_card_text {
+display: flex;
+height: 75px;
+padding-left: 15px;
+padding-right: 25px;
+justify-content: space-between;
+align-items: center;
+/*Le coeur est centré selon axe secondaire, justify-content: axe primaire*/
+}
+.card_text h3 {
+margin-top: 5px;
+margin-bottom: 0;
+font-size: 15px;
+}
+.card_text p {
+margin-top: 3px;
+margin-bottom: 4px;
+font-size: 15px;
+}
+/*------------------------------------------------------------------------coeur------------------------------------------------------------*/
+.coeur {
+display: flex;
+padding-right: 30px;
+padding-bottom: 30px;
+}
+.coeur .far {
+display: flex;
+font-size: 30px;
+position: absolute;
+opacity: 1;
+color: #44464a;
+display: flex;
+transition: opacity 500ms;
+background: transparent;
+}
+.coeur .fas {
+display: flex;
+font-size: 30px;
+position: absolute;
+opacity: 0;
+transition: opacity 500ms;
+background: linear-gradient(#ff79da, #9356dc);
+/*pour obtenir un dégradé de couleurs dans le coeur. Le dégradé ne fonctionne pas avec color*/
+background-clip: text;
+/*le background s'affiche à travers le texte (ici l'icône coeur) et pas ailleurs*/
+-webkit-background-clip: text;
+/*pour que cela fonctionne sur les navigateurs tels que chrome et safari*/
+color: transparent;
+}
+.coeur:hover .far {
+opacity: 0;
+transition: 1s;
+}
+.coeur:hover .fas {
+opacity: 1;
+transition: 1s;
+}
+/*-----------------------------------------------------------------------------footer-------------------------------------------------------*/
+footer {
+width: 100%;
+background: #353535;
+color: white;
+padding: 3rem;
+display: flex;
+flex-direction: column;
+} 
+.logo_footer img{
+color: white;
+display: flex;
+margin-bottom: 25px;
+font-size: 30px;
+}
+footer h3{
+color: white;
+font-family: "Shrikhand", sans-serif;
+}
+footer i {
+padding-right: 10px;
+/* pour séparer les icônes */
+}
+footer h2 {
+display: flex;
+margin-top: 8px;
+margin-bottom: 8px;
+font-size: 18px;
+color: white;
+font-family: "Roboto", sans-serif;
+}
+footer p {
+margin-top: 8px;
+margin-bottom: 8px;
+font-size: 18px;
+color: white;
+}
+footer a {
+display: flex;
+/* pour ne pas avoir un lien bleu souligné*/
+    
+}
+footer a:link {
+color: white;
+}
+/*--------------------------------------------------------------------images-------------------------------------------------------------*/
+.image_lapalettedugout {
+    height: 260px;
+    width: 100%;
+    background-size: 100%;
+    object-fit: cover;
+    }
+.image_lanoteenchantée {
+    height: 260px;
+    width: 100%;
+    background-size: 100%;
+    object-fit: cover;
+    }
+.image_Alafrancaise {
+    height: 260px;
+    width: 100%;
+    background-size: 100%;
+    object-fit: cover;
+    }
+.image_ledélicedessens{
+    height: 260px;
+    width: 100%;
+    background-size: 100%;
+    object-fit: cover;
+    }
+/*-------------------------------------------------------------section entrees-------------------------------------------------------------*/
+    
+.entrees {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: #f2f2f2;
+    }
+.entrees h2 {
+    display: flex;
+    margin-left: 30px;
+    width: 20%;
+    } 
+.entrees h2:before {
+    content: "";
+    display: flex;
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    border-bottom: #99e2d0 solid 3px;
+    }
+/*------------------------------------------------------------ section plats-------------------------------------------------------------- */
+.plats {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: #f2f2f2;
+    }
+.plats h2 {
+    display: flex;
+    margin-left: 30px;
+    width: 20%;
+/*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
+    }
+.plats h2:before {
+    content: "";
+    display: flex;
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    border-bottom: #99e2d0 solid 3px;
+    }
+/*-------------------------------------------------------------section desserts------------------------------------------------------------*/
+.desserts {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: #f2f2f2;
+    }
+.desserts h2 {
+    display: flex;
+    margin-left: 30px;
+    width: 20%;
+/*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
+    }
+.desserts h2:before {
+    content: "";
+    display: flex;
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    border-bottom: #99e2d0 solid 3px;
+    }
+/*-----------------------------------------------------------section restaurant------------------------------------------------------------------*/
+    
+.restaurant_nom {
+    font-family: "Shrikhand";
+    position: relative;
+    display: grid;
+    background-color:green;
+    font-size: 15px;
+    border-radius: 30px 30px 0 0;
+    padding-left: 30px;
+    margin-top: -30px;
+    /*pour remonter sur l'image*/
+    grid-template-columns: 82% 18%;
+    /*2 columns la largeur de la premiere fait que ohmyfood est centré*/
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "h1  .heart ";
+    width: 100%;
+    }
+    
+  .restaurant_nom i {
+    color: #44464a;
+    padding-top: 13px;
+    align-items: center;
+    justify-content: center;
+    }
+  /*------------------------------------------------------------------menu carte-------------------------------------------------------------*/
+  .menu_carte {
+    display: flex;
+    width: 85%;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 15px;
+    font-size: 12px;
+    box-shadow: 0 0 10px #ccc;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    transform: scaleY(0);
+    transform-origin: top;
+    }
+  .menu_carte_texte{
+    display: flex;
+    flex-direction:column;
+    padding-left: 20px;
+    padding-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+.menu_carte_texte h3 {
+    display:inline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+    }
+.menu_carte_texte p {
+    display: inline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 0px;
+    }  
+.menu_carte_prix {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    margin-left: auto;
+      /*permet de rejeter prix vars la droite */
+    padding-left: 10px;
+    padding-top: 34px;
+    padding-right: 15px;
+    }
+.menu_carte_check {
+    display: flex;
+    width: 0;
+    border-radius: 0 15px 15px 0;
+    background-color: #99e2d0;
+    visibility: hidden; 
+    }
+.menu_carte_check i {
+    align-items: center;
+    display: flex;
+    margin-left: 42%;
+    font-size: 20px;
+    color: white;
+    }
+    
+.entrees_menu_carte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+.plats_menu_carte {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    }
+.desserts_menu_carte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+/*-----------------------------------------------------------animation----------------------------------------------------------------------*/
+.entrees .menu_carte {
+    animation: loading-menus 600ms;
+    animation-fill-mode: forwards;
+      /*garde les propriétés css de fin de l'animation pr que la carte reste ouverte à scale 1  */
+    }
+.plats .menu_carte  {
+    animation: loading-menus 300ms;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+    }
+.desserts .menu_carte {
+    animation: loading-menus 200ms;
+    animation-delay: 900ms;
+    animation-fill-mode: forwards;
+    }
+@keyframes loading-menus {
+      0% {
+        transform: scaleY(0);
+      }
+      100% {
+        transform: scaleY(1);
+      }
+    }
+.entrees a:hover .menu_carte_check {
+    display: flex;
+    visibility: visible;
+    width: 70px;
+    transition: all 500ms;
+    }
+.entrees a:hover .menu_carte_check i {
+    display: flex;
+    transform: rotate(-360deg);
+    transition: all 800ms;
+    }
+    
+.plats a:hover .menu_carte_check {
+    display: flex;
+    visibility: visible;
+    width: 70px;
+    transition: all 500ms;
+    }
+.plats a:hover .menu_carte_check i {
+    display: flex;
+    transform: rotate(-360deg);
+    transition: all 800ms;
+    }
+    
+.desserts a:hover .menu_carte_check {
+    display: flex;
+    visibility: visible;
+    width: 70px;
+    transition: all 500ms;
+    }
+.desserts a:hover .menu_carte_check i {
+    display: flex;
+    transform: rotate(-360deg);
+    transition: all 800ms;
+    }
+.bouton_commander {
+    display: flex;
+    width: 100%;
+    padding-top: 40px;
+    justify-content: center;
+    height: 170px;
+    background-color: #f2f2f2;
+    }
+/*-----------------------------------------------media queries-----------------------------------------------------------------*/
+/*loader*/
+@media screen and (max-width: 350px) {
+.loader {
+    width: 180px;
+    height: 180px;
+    left: calc(50% - 90px);
+    /*sur les petits écrans, inférieurs à 350px, le loader doit être + petit*/
+    }
+.loader-circle {
+    font-size: 20px;
+     }
+    }
+    
+     }
+    }
+/*filters*/
+    
+     }
+    }
+/*restaurant card*/
+@media all and (min-width: 768px) {
+    .restaurant_card {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 47%;
+      }
+     }
+    }
+/*footer*/
+@media screen and (min-width: 768px) {
+    footer {
+        padding: 4% 0 4% 6%;
+      }
+    }
+/*body*/
+    
