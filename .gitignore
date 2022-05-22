@@ -1,4 +1,5 @@
-# dependencies
+.sass-cache/
 /node_modules/**
+/sass/**
+package.json 
 package-lock.json
-package.json
