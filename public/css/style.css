@@ -36,7 +36,7 @@ body {
 overflow-x: hidden;
     
 }
-button {
+button{
 background-image: linear-gradient(#FF79DA, #9356DC);
 height: 3rem;
 color: white;
@@ -252,11 +252,7 @@ margin-left: 15px;
 width: 30rem;
 }
  }
-@media screen and (max-width: 918px) {
-.restaurant_card{
-width: 30rem;
-}
-     }
+
 .restaurant_card  img {
 object-fit: cover;
 display: flex;
@@ -284,7 +280,6 @@ padding-left: 15px;
 padding-right: 25px;
 justify-content: space-between;
 align-items: center;
-/*Le coeur est centré selon axe secondaire, justify-content: axe primaire*/
 }
 .card_text h3 {
 margin-top: 5px;
@@ -375,6 +370,13 @@ display: flex;
 footer a:link {
 color: white;
 }
+}    
+/*footer*/
+@media screen and (min-width: 768px) {
+footer {
+        padding: 4% 0 4% 6%;
+}
+    }
 /*--------------------------------------------------------------------images-------------------------------------------------------------*/
 .image_lapalettedugout {
 height: 260px;
@@ -573,7 +575,6 @@ align-items: center;
 .entrees .menu_carte {
 animation: loading-menus 600ms;
 animation-fill-mode: forwards;
-/*garde les propriétés css de fin de l'animation pr que la carte reste ouverte à scale 1  */
 }
 .plats .menu_carte  {
 animation: loading-menus 300ms;
@@ -585,7 +586,7 @@ animation: loading-menus 200ms;
 animation-delay: 900ms;
 animation-fill-mode: forwards;
 }
-@keyframes loading-menus {
+@keyframes loading-menus{
       0% {
         transform: scaleY(0);
       }
@@ -636,16 +637,3 @@ justify-content: center;
 height: 170px;
 background-color: #f2f2f2;
 }
-/*-----------------------------------------------media queries-----------------------------------------------------------------*/
-/*loader*/
-
-
- 
-
-}    
-/*footer*/
-@media screen and (min-width: 768px) {
-    footer {
-        padding: 4% 0 4% 6%;
-      }
-    }
