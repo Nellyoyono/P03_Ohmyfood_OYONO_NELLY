@@ -19,7 +19,7 @@ color: #000000;
 background-color: #f6f6f6;
 margin:0;
 }
-/*les liens ne sont pas bleu soulignés */
+
 a:link {
 text-decoration: none;
 color: black;
@@ -79,23 +79,23 @@ animation: ring 1s linear infinite;
 /*-------------------------------------------------------animation loader------------------------------------------------------------------*/
 @keyframes fade-in {
 0% {
-  opacity: 0.9;
+opacity: 0.9;
   }
-  100% {
-  opacity: 0;
-  z-index: -1;
-  }
-    }
+100% {
+opacity: 0;
+z-index: -1;
+}
+ } 
 @keyframes ring {
-  0% {
-  transform: rotate(0deg);
-  }
-  100% {
-  transform: rotate(360deg);
-    z-index: -1;
-  }
-    }
-    /*-----------------------------------------------------------------------header (logo)-----------------------------------------------------*/
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+ z-index: -1;
+}
+ }
+/*-----------------------------------------------------------------------header (logo)-----------------------------------------------------*/
 .header-title {
 display: flex;
 align-items: center;
@@ -236,7 +236,7 @@ position: relative;
 height: 100%;
 /*la carte occupe toute la largeur du conteneur a=href */
 min-height: 100px;
-width: 37%;
+width: 96%;
 box-shadow: 0 0 10px gray;
 flex-direction: column;
 justify-content: space-between;
@@ -244,13 +244,25 @@ justify-content: space-between;
 background-color: white;
 border-radius: 15px;
 font-size: 12px;
+margin-right: 15px;
+margin-left: 15px;
 }
+@media screen and (min-width: 918px) {
+.restaurant_card{
+width: 30rem;
+}
+ }
+@media screen and (max-width: 918px) {
+.restaurant_card{
+width: 30rem;
+}
+     }
 .restaurant_card  img {
 object-fit: cover;
 display: flex;
+background-size: cover;
 width: 100%;
 height: 180px;
-object-fit: cover;
 border-radius: 10px 10px 10px 10px;
 } 
 .restaurant_card_new {
@@ -307,11 +319,8 @@ position: absolute;
 opacity: 0;
 transition: opacity 500ms;
 background: linear-gradient(#ff79da, #9356dc);
-/*pour obtenir un dégradé de couleurs dans le coeur. Le dégradé ne fonctionne pas avec color*/
 background-clip: text;
-/*le background s'affiche à travers le texte (ici l'icône coeur) et pas ailleurs*/
 -webkit-background-clip: text;
-/*pour que cela fonctionne sur les navigateurs tels que chrome et safari*/
 color: transparent;
 }
 .coeur:hover .far {
@@ -343,7 +352,7 @@ font-family: "Shrikhand", sans-serif;
 }
 footer i {
 padding-right: 10px;
-/* pour séparer les icônes */
+
 }
 footer h2 {
 display: flex;
@@ -361,7 +370,6 @@ color: white;
 }
 footer a {
 display: flex;
-/* pour ne pas avoir un lien bleu souligné*/
     
 }
 footer a:link {
@@ -369,215 +377,214 @@ color: white;
 }
 /*--------------------------------------------------------------------images-------------------------------------------------------------*/
 .image_lapalettedugout {
-    height: 260px;
-    width: 100%;
-    background-size: 100%;
-    object-fit: cover;
-    }
+height: 260px;
+width: 100%;
+background-size: 100%;
+object-fit: cover;
+}
 .image_lanoteenchantée {
-    height: 260px;
-    width: 100%;
-    background-size: 100%;
-    object-fit: cover;
+height: 260px;
+width: 100%;
+background-size: 100%;
+object-fit: cover;
     }
 .image_Alafrancaise {
-    height: 260px;
-    width: 100%;
-    background-size: 100%;
-    object-fit: cover;
-    }
+height: 260px;
+width: 100%;
+background-size: 100%;
+object-fit: cover;
+}
 .image_ledélicedessens{
-    height: 260px;
-    width: 100%;
-    background-size: 100%;
-    object-fit: cover;
-    }
+height: 260px;
+width: 100%;
+background-size: 100%;
+object-fit: cover;
+}
 /*-------------------------------------------------------------section entrees-------------------------------------------------------------*/
     
 .entrees {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    row-gap: 10px;
-    background-color: #f2f2f2;
-    }
+display: flex;
+height: 100%;
+flex-direction: column;
+row-gap: 10px;
+background-color: #f2f2f2;
+}
 .entrees h2 {
-    display: flex;
-    margin-left: 30px;
-    width: 20%;
-    } 
+display: flex;
+margin-left: 30px;
+width: 20%;
+position: relative;
+} 
 .entrees h2:before {
-    content: "";
-    display: flex;
-    width: 70px;
-    height: 30px;
-    position: absolute;
-    border-bottom: #99e2d0 solid 3px;
-    }
+content: "";
+display: flex;
+width: 70px;
+height: 30px;
+position: absolute;
+border-bottom: #99e2d0 solid 3px;
+}
 /*------------------------------------------------------------ section plats-------------------------------------------------------------- */
 .plats {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    row-gap: 10px;
-    background-color: #f2f2f2;
-    }
+display: flex;
+height: 100%;
+flex-direction: column;
+row-gap: 10px;
+background-color: #f2f2f2;
+}
 .plats h2 {
-    display: flex;
-    margin-left: 30px;
-    width: 20%;
-/*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
-    }
+display: flex;
+margin-left: 30px;
+width: 20%;
+position: relative;
+}
 .plats h2:before {
-    content: "";
-    display: flex;
-    width: 70px;
-    height: 30px;
-    position: absolute;
-    border-bottom: #99e2d0 solid 3px;
-    }
+content: "";
+display: flex;
+width: 70px;
+height: 30px;
+position: absolute;
+border-bottom: #99e2d0 solid 3px;
+}
 /*-------------------------------------------------------------section desserts------------------------------------------------------------*/
 .desserts {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    row-gap: 10px;
-    background-color: #f2f2f2;
-    }
+display: flex;
+height: 100%;
+flex-direction: column;
+row-gap: 10px;
+background-color: #f2f2f2;
+}
 .desserts h2 {
-    display: flex;
-    margin-left: 30px;
-    width: 20%;
-/*  pour créer un trait vert plus court car sinon dépasse et est à 20%  https://qastack.fr/programming/8572952/border-length-smaller-than-div-width*/
-    }
+display: flex;
+margin-left: 30px;
+width: 20%;
+position: relative;
+ }
 .desserts h2:before {
-    content: "";
-    display: flex;
-    width: 70px;
-    height: 30px;
-    position: absolute;
-    border-bottom: #99e2d0 solid 3px;
-    }
+content: "";
+display: flex;
+width: 70px;
+height: 30px;
+position: absolute;
+border-bottom: #99e2d0 solid 3px;
+}
 /*-----------------------------------------------------------section restaurant------------------------------------------------------------------*/
     
 .restaurant_nom {
-    font-family: "Shrikhand";
-    position: relative;
-    display: grid;
-    background-color: #f2f2f2;
-    font-size: 15px;
-    border-radius: 30px 30px 0 0;
-    padding-left: 30px;
-    margin-top: -30px;
-    /*pour remonter sur l'image*/
-    grid-template-columns: 82% 18%;
-    /*2 columns la largeur de la premiere fait que ohmyfood est centré*/
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas: "h1  .coeur ";
-    width: 100%;
-    }
-    
+font-family: "Shrikhand";
+position: relative;
+display: grid;
+background-color: #f2f2f2;
+font-size: 15px;
+border-radius: 30px 30px 0 0;
+padding-left: 30px;
+margin-top: -30px;
+/*pour remonter sur l'image*/
+grid-template-columns: 82% 18%;
+/*2 columns la largeur de la premiere fait que ohmyfood est centré*/
+grid-template-rows: 1fr;
+gap: 0px 0px;
+grid-auto-flow: row;
+grid-template-areas: "h1  .coeur ";
+width: 100%;
+}  
   .restaurant_nom i {
-    color: #44464a;
-    padding-top: 13px;
-    align-items: center;
-    justify-content: center;
-    }
-  /*------------------------------------------------------------------menu carte-------------------------------------------------------------*/
-  .menu_carte {
-    display: flex;
-    width: 85%;
-    height: 60px;
-    background-color: #fff;
-    border-radius: 15px;
-    font-size: 12px;
-    box-shadow: 0 0 10px #ccc;
-    margin-bottom: 20px;
-    justify-content: space-between;
-    transform: scaleY(0);
-    transform-origin: top;
-    }
-  .menu_carte_texte{
-    display: flex;
-    flex-direction:column;
-    padding-left: 20px;
-    padding-bottom: 0px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    }
+color: #44464a;
+padding-top: 13px;
+align-items: center;
+justify-content: center;
+}
+/*------------------------------------------------------------------menu carte-------------------------------------------------------------*/
+.menu_carte {
+display: flex;
+width: 85%;
+height: 60px;
+background-color: #fff;
+border-radius: 15px;
+font-size: 12px;
+box-shadow: 0 0 10px #ccc;
+margin-bottom: 20px;
+justify-content: space-between;
+transform: scaleY(0);
+transform-origin: top;
+}
+.menu_carte_texte{
+display: flex;
+flex-direction:column;
+padding-left: 20px;
+padding-bottom: 0px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
 .menu_carte_texte h3 {
-    display:inline;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 5px;
-    }
+display:inline;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+margin-bottom: 5px;
+}
 .menu_carte_texte p {
-    display: inline;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-top: 0px;
+display: inline;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+margin-top: 0px;
     }  
 .menu_carte_prix {
-    display: flex;
-    flex-wrap: wrap;
-    font-weight: bold;
-    margin-left: auto;
-      /*permet de rejeter prix vars la droite */
-    padding-left: 10px;
-    padding-top: 34px;
-    padding-right: 15px;
-    }
+display: flex;
+flex-wrap: wrap;
+font-weight: bold;
+margin-left: auto;
+padding-left: 10px;
+padding-top: 34px;
+padding-right: 15px;
+}
 .menu_carte_check {
-    display: flex;
-    width: 0;
-    border-radius: 0 15px 15px 0;
-    background-color: #99e2d0;
-    visibility: hidden; 
-    }
+display: flex;
+width: 0;
+border-radius: 0 15px 15px 0;
+background-color: #99e2d0;
+visibility: hidden; 
+}
 .menu_carte_check i {
-    align-items: center;
-    display: flex;
-    margin-left: 42%;
-    font-size: 20px;
-    color: white;
-    }
+align-items: center;
+display: flex;
+margin-left: 42%;
+font-size: 20px;
+color: white;
+}
     
 .entrees_menu_carte{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 .plats_menu_carte {
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    }
+display: flex;
+flex-direction:column;
+align-items: center;
+}
 .desserts_menu_carte {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 /*-----------------------------------------------------------animation----------------------------------------------------------------------*/
 .entrees .menu_carte {
-    animation: loading-menus 600ms;
-    animation-fill-mode: forwards;
-      /*garde les propriétés css de fin de l'animation pr que la carte reste ouverte à scale 1  */
-    }
+animation: loading-menus 600ms;
+animation-fill-mode: forwards;
+/*garde les propriétés css de fin de l'animation pr que la carte reste ouverte à scale 1  */
+}
 .plats .menu_carte  {
-    animation: loading-menus 300ms;
-    animation-delay: 600ms;
-    animation-fill-mode: forwards;
-    }
+animation: loading-menus 300ms;
+animation-delay: 600ms;
+animation-fill-mode: forwards;
+}
 .desserts .menu_carte {
-    animation: loading-menus 200ms;
-    animation-delay: 900ms;
-    animation-fill-mode: forwards;
-    }
+animation: loading-menus 200ms;
+animation-delay: 900ms;
+animation-fill-mode: forwards;
+}
 @keyframes loading-menus {
       0% {
         transform: scaleY(0);
@@ -587,82 +594,58 @@ color: white;
       }
     }
 .entrees a:hover .menu_carte_check {
-    display: flex;
-    visibility: visible;
-    width: 70px;
-    transition: all 500ms;
-    }
+display: flex;
+visibility: visible;
+width: 70px;
+transition: all 500ms;
+}
 .entrees a:hover .menu_carte_check i {
-    display: flex;
-    transform: rotate(-360deg);
-    transition: all 800ms;
-    }
+display: flex;
+transform: rotate(-360deg);
+transition: all 800ms;
+}
     
 .plats a:hover .menu_carte_check {
-    display: flex;
-    visibility: visible;
-    width: 70px;
-    transition: all 500ms;
-    }
+display: flex;
+visibility: visible;
+width: 70px;
+transition: all 500ms;
+}
 .plats a:hover .menu_carte_check i {
-    display: flex;
-    transform: rotate(-360deg);
-    transition: all 800ms;
-    }
+display: flex;
+transform: rotate(-360deg);
+transition: all 800ms;
+}
     
 .desserts a:hover .menu_carte_check {
-    display: flex;
-    visibility: visible;
-    width: 70px;
-    transition: all 500ms;
-    }
+display: flex;
+visibility: visible;
+width: 70px;
+transition: all 500ms;
+}
 .desserts a:hover .menu_carte_check i {
-    display: flex;
-    transform: rotate(-360deg);
-    transition: all 800ms;
-    }
+display: flex;
+transform: rotate(-360deg);
+transition: all 800ms;
+}
 .bouton_commander {
-    display: flex;
-    width: 100%;
-    padding-top: 40px;
-    justify-content: center;
-    height: 170px;
-    background-color: #f2f2f2;
-    }
+display: flex;
+width: 100%;
+padding-top: 40px;
+justify-content: center;
+height: 170px;
+background-color: #f2f2f2;
+}
 /*-----------------------------------------------media queries-----------------------------------------------------------------*/
 /*loader*/
-@media screen and (max-width: 350px) {
-.loader {
-    width: 180px;
-    height: 180px;
-    left: calc(50% - 90px);
-    /*sur les petits écrans, inférieurs à 350px, le loader doit être + petit*/
-    }
-.loader-circle {
-    font-size: 20px;
-     }
-    }
-    
-     }
-    }
-/*filters*/
-    
-     }
-    }
-/*restaurant card*/
-@media screen and (min-width: 768px) {
-    .restaurants_card {
-      display: flex;
-      flex-direction: column;
-    }
-  }
 
-    
+
+ 
+
+}    
 /*footer*/
 @media screen and (min-width: 768px) {
     footer {
         padding: 4% 0 4% 6%;
       }
     }
-/*body*/
-    
