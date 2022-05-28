@@ -477,9 +477,9 @@ grid-auto-flow: row;
 grid-template-areas: "h1  .coeur ";
 width: 100%;
 }  
-  .restaurant_nom i {
+.restaurant_nom i {
 color: #44464a;
-padding-top: 13px;
+padding-top: 25px;
 align-items: center;
 justify-content: center;
 }
